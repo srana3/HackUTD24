@@ -1,1 +1,1 @@
-"# HackUTD24" 
+# HackUTD24 
