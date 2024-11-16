@@ -1,10 +1,12 @@
-1. How comfortable are you with managing basic banking tasks like opening a savings or checking account?
-2. How well do you understand the different types of bank accounts (e.g., savings, checking, CD, etc.) and their purposes?
-3. How well do you understand how interest is applied to savings or checking accounts?
-4. How familiar are you with the concept of risk and return in investing?
-5. How comfortable are you with the concept of portfolio diversification and why it is important for managing risk?
-6. How well do you understand the concept of dividends and how they contribute to an investment’s return?
-7. How familiar are you with the concept of mutual funds and how they differ from individual stocks or bonds?
-8. What is your level of understanding regarding liquidity in investments? 
-9. How well do you understand the importance of budgeting and how it impacts your financial goals?
-10. How familiar are you with the concept of emergency funds, and do you have one?
+1. Do you know the difference between a checking and savings accounts? (Y/N)
+2. How well do you understand the different types of bank accounts 
+(e.g. High-yield Savings, Money Market, Premium Checking) and their purposes? (1-5)
+3. Do you understand how interest is applied to an individual savings or checking accounts? (Y/N)
+4. How familiar are you with the concept of risk and return in investing? (1-5)
+5. Do you have Non-Invested savings? (Y/N)
+5. How comfortable are you with understanding the need for portfolio diversification? (1-5)
+6. How comfortable are you with short-term loss? (1-5)
+7. How familiar are you with the concept of mutual funds and how they differ from individual stocks or bonds? (1-5)
+8. What is your level of understanding regarding liquidity in investments? (1-5)
+9. Do you plan on tracking your investments day-to-day, week-to-week, or only semi-regularly? (Y/N)
+10. How familiar are you with the concept of emergency funds? (1-5)
