@@ -5,7 +5,7 @@ import CardItem from './CardItem';
 function Cards() {
   return (
     <div className='cards'>
-      <h1>Our Services!</h1>
+      <h1>We are BANKR</h1>
       <div className='cards__container'>
         <div className='cards__wrapper'>
           <ul className='cards__items'>
@@ -14,7 +14,7 @@ function Cards() {
           <ul className='cards__items'>
             <CardItem
               src='images/deposit.jpg'
-              text='Deposit money securely '
+              text='Grounded in protecting your Money and Privacy '
               
             />
             <CardItem

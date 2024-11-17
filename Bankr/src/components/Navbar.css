@@ -1,5 +1,5 @@
 .navbar {
-    background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  background-color: #242222;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -16,6 +16,7 @@
     align-items: center;
     height: 80px;
     max-width: 1500px;
+    background-color: #242222;
   }
   
   .navbar-logo {
@@ -24,9 +25,15 @@
     margin-left: 20px;
     cursor: pointer;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 2.5rem;
     display: flex;
     align-items: center;
+    background-color: #242222;
+  }
+
+  .navbar-logo:hover{
+    color: #FF8600;
+    transition: ease-in-out 0.3s;
   }
   
   .fa-typo3 {
@@ -36,17 +43,19 @@
   
   .nav-menu {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(2, auto);
     grid-gap: 10px;
     list-style: none;
     text-align: center;
     width: 60vw;
-    justify-content: end;
+    justify-content: space-evenly;
     margin-right: 2rem;
+    background-color: #242222;
   }
   
   .nav-item {
     height: 80px;
+    font-size: 1.4rem;
   }
   
   .nav-links {
@@ -56,10 +65,11 @@
     text-decoration: none;
     padding: 0.5rem 1rem;
     height: 100%;
+    background-color: #242222;
   }
   
   .nav-links:hover {
-    border-bottom: 4px solid #fff;
+    border-bottom: 4px solid #FF8600;
     transition: all 0.2s ease-out;
   }
   
@@ -118,6 +128,7 @@
       top: 0;
       left: 0;
       transform: translate(25%, 50%);
+      font-weight: 800;
     }
   
     .menu-icon {
