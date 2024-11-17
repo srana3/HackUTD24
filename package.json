@@ -4,13 +4,21 @@
   "license": "MIT",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html",
+    "start": "node server.js"
   },
   "devDependencies": {
     "parcel": "^2.6.2"
   },
   "dependencies": {
     "@cubejs-client/core": "^0.31.0",
-    "chart.js": "^4.0.0"
-  }
+    "chart.js": "^4.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "yahoo-finance2": "^2.13.2"
+  },
+  "description": "",
+  "main": "server.js",
+  "keywords": [],
+  "author": ""
 }

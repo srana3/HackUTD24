@@ -1,0 +1,100 @@
+// portfolioData.js (can be in the same or separate file)
+const portfolioHistory = [
+    { date: "2024-01-01", value: 1000 },
+    { date: "2024-02-01", value: 1100 },
+    { date: "2024-03-01", value: 1200 },
+];
+
+// Function to get the labels and data
+function extractChartData(data) {
+    const labels = data.map(entry => entry.date);
+    const values = data.map(entry => entry.value);
+    return { labels, values };
+}
+
+// Function to create a gradient for the chart line
+function createGradient(ctx) {
+    const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+    gradient.addColorStop(0, 'rgba(75, 192, 192, 0.4)');
+    gradient.addColorStop(1, 'rgba(75, 192, 192, 0)');
+    return gradient;
+}
+
+// Chart configuration
+function createChart(ctx, labels, data) {
+    const gradient = createGradient(ctx);
+
+    return new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Portfolio Value ($)',
+                data: data,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: gradient,
+                borderWidth: 3,
+                pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+                pointBorderColor: '#fff',
+                pointHoverRadius: 8,
+                pointRadius: 6,
+                pointStyle: 'circle',
+                tension: 0.4,
+            }],
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        color: '#333',
+                        font: { size: 14 }
+                    },
+                },
+                tooltip: {
+                    enabled: true,
+                    backgroundColor: 'rgba(75, 192, 192, 0.8)',
+                    titleFont: { size: 16, weight: 'bold' },
+                    bodyFont: { size: 14 },
+                    bodyColor: '#fff',
+                    padding: 10,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                },
+            },
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Date',
+                        color: '#555',
+                        font: { size: 16, weight: 'bold' }
+                    },
+                    grid: { display: false },
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Portfolio Value ($)',
+                        color: '#555',
+                        font: { size: 16, weight: 'bold' }
+                    },
+                    grid: { color: 'rgba(200, 200, 200, 0.3)' },
+                    beginAtZero: false,
+                },
+            },
+        },
+    });
+}
+
+// Main function to initialize the chart
+function initializeChart() {
+    const { labels, values } = extractChartData(portfolioHistory);
+    const ctx = document.getElementById('portfolioChart').getContext('2d');
+    createChart(ctx, labels, values);
+}
+
+// Initialize the chart once the page has loaded
+window.onload = initializeChart;
