@@ -14,6 +14,7 @@ def get_stock_price(ticker_symbol, api):
 def get_stock_quote(ticker_symbol, api):
     url = f"https://api.twelvedata.com/quote?symbol={ticker_symbol}&apikey=demo{api}"
     response = requests.get(url).json()
+    
     return response
 stockdata = get_stock_quote(ticker, api_key)
 stock_price = get_stock_price(ticker, api_key)
