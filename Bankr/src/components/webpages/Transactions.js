@@ -74,7 +74,7 @@ display: flex;
     margin-top: 20px;
     margin-bottom: 20px;
     font-family: "Roboto", sans-serif;
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--star-command-blue);
     
   }

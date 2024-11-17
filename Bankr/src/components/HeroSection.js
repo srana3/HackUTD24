@@ -8,7 +8,7 @@ function HeroSection() {
     <div className='hero-container'>
       <video src='/videos/coins.mp4' autoPlay loop muted />
       <h1>Bankr</h1>
-      <p>Banking Reimagined</p>
+      <p>The one you can bank on</p>
       <div className='hero-btns'>
         <Button
           className='btns'

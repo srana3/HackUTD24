@@ -5,6 +5,7 @@ import { css, jsx } from "@emotion/react";
 import { useState, useEffect } from "react";
 import { transact, addTransaction, db } from "./firebase";
 import { useHistory } from "react-router-dom";
+import "./transfer.css";
 
 function Transfer() {
   const [state, setState] = useState({
@@ -87,9 +88,24 @@ function Transfer() {
        
     
       <form id="login" class="input-group-login" onSubmit={handleSubmit}>
-        
+      <label htmlFor="from" className="label">
+            Amount
+          </label>
+          <input
+            type="text"
+            name="amount"
+            className="input-field"
+            maxLength={7}
+            value={`$${state.amount}`}
+            placeholder="$0.00"
+            onChange={(e) => {
+              const value = e.target.value.replace(/[^0-9.]/g, ""); // Remove non-numeric and non-dot characters
+              setState({ ...state, amount: value });
+            }}
+        />
+
           <b><label htmlFor="sender" className="label">
-            Transfer from:
+            From
           </label></b>
           <input
             type="number"
@@ -103,7 +119,7 @@ function Transfer() {
         
         
           <b><label htmlFor="receiver" className="label">
-            Transfer to:
+            To
           </label></b><br/>
           <input
             type="number"
@@ -116,19 +132,7 @@ function Transfer() {
           />
         
         
-          <b><label htmlFor="from" className="label">
-            Enter Amount:
-          </label></b> <br></br>
-          <input
-            type="number"
-            min={1}
-            name="sender"
-            class="input-field"
-            
-            value={state.amount}
-            onChange={(e) => setState({ ...state, amount: e.target.value })}
-          /><br/>
-         <br/>
+          
           <button type="submit" class='submit-btn'><b>
             Transfer </b>
           </button>
@@ -141,155 +145,6 @@ function Transfer() {
 }
 
 const CSS = css`
-{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background: url('/images/img-home.jpg') center center/cover no-repeat;
-  
-}
-img {
-  object-fit: cover ;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  opacity: 0.5;
-  
-}
-.container
-{
-height: 100%;
-width: 100%;
-background-position: center;
-background-size: cover;
-position: absolute;
-}
-
-#login-form
-{
-  display: inline-block;
-  margin-left: 34% !important;
-  margin-right:auto;
-}
-
-.form-box
-{
-width:550px;
-height:550px;
-position: relative;
-margin:7% auto;
-background:rgba(103,128,159,1);
-padding:75px;
-h1 {
-width: 85%;
-padding: 15px 35px;
-cursor: pointer;
-display: block;
-
-background: #F3C693;
-border: 0;
-outline: none;
-border-radius: 10px;
-  text-align: center;
-  margin-top: -17px; 
-  margin-left: 20px;
-  font-size: 25px;
-  color: var(--star-command-blue); 
-}
-}
-.button-box
-{
-
-width:220px;
-margin:0px auto;
-position:relative;
-box-shadow: 0 0 0px 0px #ff61241f;
-border-radius: 30px;
-}
-
-
-#btn
-{
-top: 0;
-left:0;
-position: absolute;
-width: 110px;
-height: 100%;
-background: #F3C693;
-border-radius: 30px;
-transition: .5s;
-}
-.input-group-login
-{
-top: 150px;
-position:absolute;
-width:280px;
-transition:.5s;
-.label
-{
-  font-size: 20px;
-  padding: 10px;
-}
-
-
-}
-.input-group-register
-{
-  top: 120px;
-position:absolute;
-width:280px;
-transition:.5s;
-}
-.input-field
-{
-width: 100%;
-height: 50px;
-font-family: "Verdana", sans-serif;
-padding:10px 0;
-margin:5px 0;
-border-left:3px solid #999;
-border-top:3px solid #999;
-border-right:3px solid #999;
-border-bottom: 3px solid #999;
-outline:none;
-background: transparent;
-}
-.submit-btn
-{
-width: 85%;
-font-size: 20px;
-padding: 15px 35px;
-cursor: pointer;
-display: block;
-margin: auto;
-background: #F3C691;
-border: 0;
-outline: none;
-border-radius: 10px;
-}
-.check-box
-{
-margin: 30px 10px 34px 0;
-}
-span
-{
-color:#777;
-font-size:12px;
-bottom:68px;
-position:absolute;
-}
-#login
-{
-font-size:20px;
-font-family: "Georgia", sans-serif;
-padding:0;
-left:120px;
-}
-#login input
-{
-color:black;
-font-size:20px;
-}
 
 `;
   
